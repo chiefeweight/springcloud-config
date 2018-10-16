@@ -1,4 +1,4 @@
 server:
   # 配置服务提供者service-provider-1运行实例instance-1的端口
   port: 8763
-foo: foo version 1
+foo: foo version 1 git
