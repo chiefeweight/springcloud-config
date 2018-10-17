@@ -1,0 +1,23 @@
+server:
+  port: 5000
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://registry-server-2:8762/eureka
+# Zuul路由配置
+zuul:
+  routes:
+    # 自定义路由
+    hi-service-1:
+      # 将以“/hi-service-1”为头的url路由到service-provider-1服务
+      # 请求将统一通过api-gateway端口发送，发送地址为“http://api-gate服务地址/path/目标服务响应头”
+      # 如http://registry-server-1:5000/hi-service-1/service-provider-hi?name=a
+      path: /hi-service-1/**
+      serviceId: service-provider-1
+    hi-ribbon:
+      path: /hi-ribbon/**
+      serviceId: eureka-ribbon-consumer
+    hi-feign:
+      path: /hi-feign/**
+      serviceId: eureka-feign-consumer
