@@ -1,0 +1,10 @@
+server:
+  port: 8766
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://registry-server-2:8762/eureka
+feign:
+  hystrix:
+    enabled: true
