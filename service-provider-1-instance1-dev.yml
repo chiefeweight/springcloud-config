@@ -12,4 +12,10 @@ logging:
 management:
   security:
     enabled: false
+spring:
+  boot:
+    admin:
+      client:
+        enabled: true
+      auto-registration: true
 foo: foo version 1 git
