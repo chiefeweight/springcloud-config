@@ -12,4 +12,10 @@ logging:
 management:
   security:
     enabled: false
+spring:
+  boot:
+    admin:
+      client:
+        url:
+          http://registry-server-1:5001
 foo: foo version 1 git
