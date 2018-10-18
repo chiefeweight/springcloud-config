@@ -1,4 +1,15 @@
 server:
   # 配置服务提供者service-provider-1运行实例instance-2的端口
   port: 8766
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        #向注册中心节点1注册服务
+        http://registry-server-2:8762/eureka
+logging:
+  file: "logs/service-provider-1-instance2.log"
+management:
+  security:
+    enabled: false
 foo: foo version 1 git
