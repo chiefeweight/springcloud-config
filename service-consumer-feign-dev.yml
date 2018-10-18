@@ -8,3 +8,8 @@ eureka:
 feign:
   hystrix:
     enabled: true
+logging:
+  file: "logs/service-consumer-feign.log"
+management:
+  security:
+    enabled: false
