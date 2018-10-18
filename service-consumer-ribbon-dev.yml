@@ -5,3 +5,8 @@ eureka:
     serviceUrl:
       defaultZone:
         http://registry-server-1:8761/eureka
+logging:
+  file: "logs/service-consumer-ribbon.log"
+management:
+  security:
+    enabled: false
