@@ -1,0 +1,20 @@
+server:
+  port: 5001
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://registry-server-2:8762/eureka
+management:
+  security:
+    # 关闭安全验证
+    enabled: false
+logging:
+  # 日志输出路径
+  file: "logs/admin-server.log"
+spring:
+  boot:
+    admin:
+      routes:
+        # admin开启节点
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
