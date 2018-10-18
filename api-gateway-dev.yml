@@ -17,7 +17,7 @@ zuul:
       serviceId: service-provider-1
     hi-ribbon:
       path: /hi-ribbon/**
-      serviceId: eureka-ribbon-consumer
+      serviceId: service-consumer-ribbon
     hi-feign:
       path: /hi-feign/**
-      serviceId: eureka-feign-consumer
+      serviceId: service-consumer-feign
