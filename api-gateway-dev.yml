@@ -21,3 +21,8 @@ zuul:
     hi-feign:
       path: /hi-feign/**
       serviceId: service-consumer-feign
+logging:
+  file: "logs/api-gateway.log"
+management:
+  security:
+    enabled: false
