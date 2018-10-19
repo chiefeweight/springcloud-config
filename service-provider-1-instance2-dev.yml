@@ -7,9 +7,15 @@ eureka:
       defaultZone:
         #向注册中心节点1注册服务
         http://registry-server-2:8762/eureka
-logging:
-  file: "logs/service-provider-1-instance2.log"
+# 暴露端口，可供admin server使用
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+logging:
+  file: "logs/service-provider-1-instance2.log" 
 foo: foo version 1 git
