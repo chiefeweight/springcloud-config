@@ -6,9 +6,13 @@ eureka:
       defaultZone:
         http://registry-server-2:8762/eureka
 management:
-  security:
-    # 关闭安全验证
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
 logging:
   # 日志输出路径
   file: "logs/admin-server.log"
