@@ -13,6 +13,9 @@ management:
     web:
       exposure:
         include: "*" 
+  endpoint:
+    health:
+      show-details: ALWAYS
 logging:
   # 日志输出路径
   file: "logs/admin-server.log"
