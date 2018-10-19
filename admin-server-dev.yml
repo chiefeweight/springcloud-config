@@ -9,6 +9,10 @@ management:
   security:
     # 关闭安全验证
     enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 logging:
   # 日志输出路径
   file: "logs/admin-server.log"
