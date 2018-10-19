@@ -5,8 +5,14 @@ eureka:
     serviceUrl:
       defaultZone:
         http://registry-server-1:8761/eureka
-logging:
-  file: "logs/service-consumer-ribbon.log"
+# 暴露端口，可供admin server使用
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+logging:
+  file: "logs/service-consumer-ribbon.log" 
