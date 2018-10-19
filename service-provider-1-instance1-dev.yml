@@ -12,10 +12,6 @@ logging:
 management:
   security:
     enabled: false
-  endpoints:
-    web:
-      exposure:
-        include: *
 spring:
   boot:
     admin:
