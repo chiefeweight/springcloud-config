@@ -14,8 +14,7 @@ management:
     enabled: false
   endpoints:
     web:
-      exposure:
-        include:*
+      exposure: "include:*"
 spring:
   boot:
     admin:
