@@ -5,11 +5,17 @@ eureka:
     service-url:
       defaultZone:
         http://registry-server-2:8762/eureka
+# 暴露端口，可供admin server使用
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+logging:
+  file: "logs/service-consumer-feign.log" 
 feign:
   hystrix:
     enabled: true
-logging:
-  file: "logs/service-consumer-feign.log"
-management:
-  security:
-    enabled: false
