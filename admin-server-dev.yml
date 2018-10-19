@@ -1,10 +1,29 @@
 server:
   port: 5001
+spring:
+  boot:
+    admin:
+      routes:
+        # admin开启节点
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
+      turbine:
+        clusters: default
+        location: turbine-monitor
+  # 创建一个security账号，用于登录
+  security:
+    user:
+      name: admin
+      password: admin
 eureka:
   client:
     service-url:
       defaultZone:
         http://registry-server-2:8762/eureka
+  instance:
+    # 添加管理员信息，使该项目的资源能被访问
+    metadata-map:
+      user.name: admin
+      user.password: admin
 # 暴露端口，可供admin server使用
 management:
   endpoints:
@@ -17,12 +36,3 @@ management:
 logging:
   # 日志输出路径
   file: "logs/admin-server.log"
-spring:
-  boot:
-    admin:
-      routes:
-        # admin开启节点
-        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
-      turbine:
-        clusters: default
-        location: turbine-monitor
