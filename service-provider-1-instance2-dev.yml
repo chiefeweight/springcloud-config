@@ -1,6 +1,6 @@
 server:
   # 配置服务提供者service-provider-1运行实例instance-2的端口
-  port: 8766
+  port: 8764
 eureka:
   client:
     service-url:
